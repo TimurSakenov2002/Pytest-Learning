@@ -3,10 +3,11 @@ from configuration import SERVICE_URL
 from src.enums.global_enums import GlobalErrorMessages
 from src.schemas.post import POST_SCHEMA
 from src.baseclasses.response import Response
+from src.pydantic.post import Post
 
 
 def test_getting_posts():
     r = requests.get(url=SERVICE_URL)
     response = Response(r)
-    response.assert_status_code(200).validate(POST_SCHEMA)
+    response.assert_status_code(200).validate(Post)
 
