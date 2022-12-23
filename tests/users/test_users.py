@@ -11,8 +11,8 @@ def test_getting_users_list(get_users):
 
 @pytest.mark.production
 @pytest.mark.skip('Functional is fixing')
-def test_another():
-    assert 1 == 1
+def test_another(make_number):
+    print(make_number)
 
 
 @pytest.mark.development
